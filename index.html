@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Volt Mills</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      
+    
+    <link rel="stylesheet" href="style.css" />  
+     
+    <script src="scripts/home.js"></script>
+  </head>
+    
+  <body>
+
+    <nav class="navbar navbar-expand-lg">
+             <div class="container-fluid">
+                <a class="navbar-brand fs-6 fw-bold" href="index.html">Volt Mills</a>
+                <span class="fw-light text-muted text-truncate" style="flex:1" id="username"></span>
+                 <button class="navbar-toggler py-1 px-2" data-bs-toggle="collapse" data-bs-target="#mobile-nav-items">
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mobile-nav-items">
+                  <div class="navbar-nav px-2 align-items-lg-center">
+                    <a class="nav-link" onclick="redirectToCategory('watch')">Smart Watches</a>
+                    <a class="nav-link" onclick="redirectToCategory('mobile')">Smartphones</a>
+                    <a class="nav-link" onclick="redirectToCategory('laptop')">Coputers and Laptops</a>
+                    <a class="nav-link" onclick="redirectToCategory('headset')">Headsets</a> 
+                    <a class="nav-link" onclick="redirectToCategory('vr')">AR Smart Gloves</a> 
+                    <a class="nav-link" href="cart.html">Cart <i class="cart bi bi-cart-plus-fill text-muted"></i></a>  
+                    <a class="nav-link" href="orders.html">Orders<i class="cart bi bi-bag-check-fill text-muted"></i></a>  
+                    <a class="btn btn-primary m-2" href="login.html" id="signInButton">SignIn</a>
+                    <a class="btn btn-warning m-2" href="signup.html" id="signUpButton">SignUp</a>
+                    <button class="btn btn-danger m-2" onclick="logout()" id="logoutButton">Logout</button>  
+                  </div>
+                </div>   
+             </div>
+         </nav> 
+      
+      
+<!--    -------carousel------>
+<div id="demo" class="carousel slide ratio-16x9" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/banner1.png" alt="Los Angeles" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="assets/banner2.png" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="https://as2.ftcdn.net/v2/jpg/03/21/50/79/1000_F_321507943_Vc5WJ9SbmsCNt91VRePAa8KZFkv4dQkz.jpg" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+  
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+    
+      
+       
+      
+<!--  Products  deals  ----------->
+<div class="container-fluid">
+    <h2 id="deal" class="lead fs-4 text-center py-2 my-2"> DEAL OF THE DAY </h2>       
+      
+    <div class="row row-cols-1 row-cols-md-2 col-sm-12 g-2 m-auto">
+      <div class="col">
+        <div class="card">
+          <img src="assets/deal-e1.png" class="card-img-top" alt="...">
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="assets/deal-e2.png" class="card-img-top" alt="...">
+        </div>
+      </div>
+    </div>  
+</div>  
+    
+  
+<hr>      
+      
+<!--Categories -->
+      
+<div class="container">    
+<div class="row row-cols-2 row-cols-md-5 text-center g-3">
+  <div class="col">
+      
+        <div class="card h-100" onclick="redirectToCategory('watch')">
+          <img src="assets/thumbnail-64.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h6 class="card-title">SMART WATCH</h6>
+          </div>
+        </div>
+           
+  </div>
+  <div class="col">
+    <div class="card h-100" onclick="redirectToCategory('mobile')">
+      <img src="assets/thumbnail-65.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <center><h6 class="card-title">MOBILES</h6></center>
+       
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100" onclick="redirectToCategory('laptop')">
+      <img src="assets/thumbnail-66.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <center><h6 class="card-title">LAPTOPS</h6></center>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100" onclick="redirectToCategory('headset')">
+      <img src="assets/thumbnail-67.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <center><h6 class="card-title">HEADSETS</h6></center>
+       
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card h-100" onclick="redirectToCategory('vr')">
+      <img src="assets/thumbnail-71.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <center><h6 class="card-title">AR SMART GLOVES</h6></center>
+      </div>
+    </div>
+  </div>
+</div>
+</div>  
+       
+       
+<!--Best seller-->
+<div class="container-fluid">      
+<h2 id="deal" class="lead fs-4 text-center py-2 mb-2 mt-4"> BEST SELLER </h2>
+</div>
+<div class="container-fluid  mt-5" style="background-image: linear-gradient(to right, #f0fae3, #e3faf8, #f0fae3);"> 
+
+    <div class="row g-4">        
+        <div class="col-md-6 d-flex justify-content-center">
+                <img  class="img-fluid" src="assets/product-preview-14%20(1).png">
+        </div>
+        <div class="col-md-6">
+                <h6>MODERN COLLECTION</h6>
+                <h2 class="">HEADPHONE MDX</h2>
+                <hr style="width:30%; color:black;">
+                <p class="p-4 fs-5">Praesent nec finibus massa. Phasellus id auctor lacus, at iaculis lorem. Donec quis arcu elit. In vehicula purus sem, eu mattis est lacinia.</p>
+                
+                <div class="row text-muted g-0">
+                    <div class="col-xl-6">
+                    <ul class="" style="    list-style-type: none;">
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp;20.000h of high quality music</li>
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp;5 years guaranteed work</li>
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp;Perfect insulation</li>
+                    </ul>
+                    </div>
+
+                    <div class="col-xl-6">
+                    <ul class="" style="    list-style-type: none;">
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp;Up to 30 hours playback</li>
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp;40 mm dynamic driver</li>
+                        <li><i class="bi bi-check2"></i>&nbsp; &nbsp; &nbsp; Adaptive Headband</li>
+                    </ul>
+                    </div>
+                </div>
+
+                 <div class="row row-cols-2 p-5 text-center">
+                        <div class="col">
+                            <h4>BEST PRICE: <span class="text-danger">$195.00 </span></h4>
+                        </div>
+                        <div class="col">
+                           <a href="" class="btn btn-dark" style="height:45px; border-radius:25px">KNOW MORE..</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+ </div> 
+  <!-- Footer -->
+<footer class=" container-fluid text-center text-lg-start text-dark" style="background-color: #ffffff">
+      <center>
+    <!-- Grid container -->
+    <div class=" " style="">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-4" style="text-align:left">
+            <p class="p-3 " align="justify">
+              Get the best products, deals, cashbacks, offers, and much more.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6><hr>
+            <p>
+              <a class="text-dark" href="#deal" >Top Deals</a>
+            </p>
+            <p>
+              <a class="text-dark" href="categories">Categories</a>
+            </p>
+            <p>
+              <a class="text-dark" href="#aboutus">About Us</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-4 " >
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6><hr>
+            <p><i class="bi bi-geo-alt-fill">&nbsp;</i> New York, NY 10012, US</p>
+            <p><i class="bi bi-envelope-at-fill"></i>&nbsp;&nbsp;&nbsp; info@gmail.com</p>
+            <p><i class="bi bi-telephone-plus-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp; + 01 234 567 88</p>
+            <p><i class="bi bi-telephone-plus-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp; + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0" style="">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              © 2022 Copyright:
+              <a class="text-white" href="#"
+                 >Volt Mills</a
+                >
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!-- Facebook -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-twitter"></i>
+              </a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-youtube"></i>
+              </a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-google"></i>
+              </a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+                <i class="bi bi-facebook"></i>    
+            </a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+          </center>
+  </footer>
+  <!-- Footer -->
+
+<script>
+    username = localStorage.getItem("username"); 
+    if(username != null){
+        document.getElementById("username").innerHTML = "Welcomes " +username;   
+        document.getElementById("logoutButton").style.display = "inline";
+        document.getElementById("signInButton").style.display = "none";
+        document.getElementById("signUpButton").style.display = "none";
+    }
+    
+    function logout(){
+        localStorage.removeItem("username");
+        localStorage.removeItem("cart");
+        location.replace("index.html");
+    }          
+</script>
+
+</body>
+</html>

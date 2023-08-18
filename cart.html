@@ -1,0 +1,216 @@
+<!Doctype html>
+<html>
+  <head>
+      <title>Shopping Cart</title>
+    <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="style.css">
+      
+      <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+      
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+      
+      <script src="scripts/cart.js"></script>
+      <script src="scripts/addToCartLogic.js"></script>
+            
+  </head>
+  <body onload="pageLoaded()">
+     <nav class="navbar navbar-expand-lg">
+             <div class="container-fluid">
+                <a class="navbar-brand fs-6 fw-bold" href="index.html">Volt Mills</a>
+                <span class="fw-light text-muted text-truncate" style="flex:1" id="username"></span>
+                 <button class="navbar-toggler py-1 px-2" data-bs-toggle="collapse" data-bs-target="#mobile-nav-items">
+                    <span class="navbar-toggler-icon"></span>
+                 </button>
+                <div class="collapse navbar-collapse justify-content-end" id="mobile-nav-items">
+                  <div class="navbar-nav px-2 align-items-lg-center">
+                    <a class="nav-link" onclick="redirectToCategory('watch')">Smart Watches</a>
+                    <a class="nav-link" onclick="redirectToCategory('mobile')">Smartphones</a>
+                    <a class="nav-link" onclick="redirectToCategory('laptop')">Coputers and Laptops</a>
+                    <a class="nav-link" onclick="redirectToCategory('headset')">Headsets</a> 
+                    <a class="nav-link" onclick="redirectToCategory('vr')">AR Smart Gloves</a> 
+                    <a class="nav-link" href="cart.html">Cart <i class="cart bi bi-cart-plus-fill text-muted"></i></a>  
+                    <a class="nav-link" href="orders.html">Orders<i class="cart bi bi-bag-check-fill text-muted"></i></a>  
+                    <a class="btn btn-primary m-2" href="login.html" id="signInButton">SignIn</a>
+                    <a class="btn btn-warning m-2" href="signup.html" id="signUpButton">SignUp</a>
+                    <button class="btn btn-danger m-2" onclick="logout()" id="logoutButton">Logout</button>  
+                  </div>
+                </div>   
+             </div>
+         </nav> 
+      
+          <div class="container justify-content-center bg-transparent mt-4 p-3">
+            <div class="row">
+                 <div class="col text-center">
+                     <h3 class="lead fs-3 fw-normal">Shopping Cart</h3>
+                 </div>
+            </div>
+              
+              <div id="cartNote" class="justify-content-center">
+                  <img src="assets/empty.png">  </div>
+              
+            <div id="product-main-div" class="mt-4">
+            </div>  
+              
+            <div id="billingDetails">
+                <div class="card text-center my-4 p-2">
+                    <div class="row p-2 justify-content-end align-items-center g-4">
+                       <div class="col-12 col-sm-4">
+                         <p class="lead mb-2 fw-normal">Order total:</p>
+                       </div>
+                       <div class="col-sm-3 col-md-1">
+                           <p class="lead mb-2 fw-normal" id="cartValue">$0</p>
+                       </div>
+
+                    </div>
+                </div>
+
+            <div class="text-center">  
+                <button type="button" class="btn-new" onclick="placeOrder()">Place Order</button>
+            </div>      
+           </div>
+        </div>
+  
+    
+  <!-- Footer -->
+<footer class=" container-fluid text-center text-lg-start text-dark" style="background-color: #ffffff">
+      <center>
+    <!-- Grid container -->
+    <div class=" " style="">
+      <!-- Section: Links -->
+      <section class="">
+        <!--Grid row-->
+        <div class="row">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-4" style="text-align:left">
+            <p class="p-3 " align="justify">
+              Get the best products,
+deals, cashbacks, offers, and
+much more.
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-4">
+            <h6 class="text-uppercase mb-4 font-weight-bold">Products</h6><hr>
+            <p>
+              <a class="text-dark" href="#deal" >Top Deals</a>
+            </p>
+            <p>
+              <a class="text-dark" href="categories">Categories</a>
+            </p>
+            <p>
+              <a class="text-dark" href="#aboutus">About Us</a>
+            </p>
+            
+          </div>
+          <!-- Grid column -->
+
+          <hr class="w-100 clearfix d-md-none" />
+
+          
+          <!-- Grid column -->
+          <hr class="w-100 clearfix d-md-none" />
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-4 " >
+            <h6 class="text-uppercase mb-4 font-weight-bold">Contact</h6><hr>
+            <p><i class="bi bi-geo-alt-fill">&nbsp;</i> New York, NY 10012, US</p>
+            <p><i class="bi bi-envelope-at-fill"></i>&nbsp;&nbsp;&nbsp; info@gmail.com</p>
+            <p><i class="bi bi-telephone-plus-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp; + 01 234 567 88</p>
+            <p><i class="bi bi-telephone-plus-fill"></i>&nbsp;&nbsp;&nbsp;&nbsp; + 01 234 567 89</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!--Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3">
+
+      <!-- Section: Copyright -->
+      <section class="p-3 pt-0" style="">
+        <div class="row d-flex align-items-center">
+          <!-- Grid column -->
+          <div class="col-md-7 col-lg-8 text-center text-md-start">
+            <!-- Copyright -->
+            <div class="p-3">
+              © 2022 Copyright:
+              <a class="text-white" href="#"
+                 >Volt Mills</a
+                >
+            </div>
+            <!-- Copyright -->
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+            <!-- Facebook -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-twitter"></i>
+              </a>
+
+            <!-- Twitter -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-youtube"></i>
+              </a>
+
+            <!-- Google -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+              <i class="bi bi-google"></i>
+              </a>
+
+            <!-- Instagram -->
+            <a
+               class="btn btn-outline-light btn-floating m-1"
+               class="text-white"
+               role="button">
+                <i class="bi bi-facebook"></i>    
+            </a>
+          </div>
+          <!-- Grid column -->
+        </div>
+      </section>
+      <!-- Section: Copyright -->
+    </div>
+    <!-- Grid container -->
+          </center>
+  </footer>
+  <!-- Footer -->
+      
+<script>
+    username = localStorage.getItem("username"); 
+    console.log(username)
+    if(username != null){
+        document.getElementById("username").innerHTML = "Welcome " +username;   
+        document.getElementById("logoutButton").style.display = "inline";
+        document.getElementById("signInButton").style.display = "none";
+        document.getElementById("signUpButton").style.display = "none";
+    }
+    
+    function logout(){
+        localStorage.removeItem("username");
+        localStorage.removeItem("cart");
+        location.replace("index.html");
+    }          
+</script>      
+
+  </body>
+</html>
